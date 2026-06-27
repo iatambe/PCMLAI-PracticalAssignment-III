@@ -8,56 +8,53 @@ The goal of this project is to determine how different factors influence the lik
 
 ## Data description
 
-Our data, which comes from Kaggle dataset, can be found in [data/bank_additional_full.csv](data/bank_additional_full.csv). The data is taken from 17 campaigns in total.
+Our data, which comes from Portuguese bank telemarketing campaigns, can be found in [data/bank_additional_full.csv](data/bank_additional_full.csv). The data is taken from 17 campaigns in total.
 
-<!--
-
-Each data point corresponds to a time a customer was contacted in a bank telemarketing campaign. The data points contain the selling price, as well as the year and model of the car, total miles on the odometer, and state and city where the car was sold. Much of the data contains additional information about the car such as paint color, drive type, fuel type, transmission, condition of the car, etc.
+Each data point corresponds to a time a customer was contacted in a bank telemarketing campaign. The data points contain information about the contacted potential customer, the time and circumstances of the contact, and socioeconomic measures such as consumer price index, etc. The target variables is whether the customer was acquired and subscribed a term deposit, encded as "yes" or "no". 
 
 ## Findings
 
 Below are some plots showing how used car prices varied for some different parameters.
 
-- Year:
+- Customer age:
 \
-![](plots/predicted_price_vs_year.png)
+![](plots/plot_age.png)
 \
-From the graph, we see that predicted price is low at 1900, reaches a peak around 1940, goes down to another trough at 1990, then increases greatly until 2022.
+From the graph, we see that customer acquisition is much more likely for ages above around 65, but relatively lower for the age range 30-50. However, the 18-25 age range is more likely than the 30-50 age range.
 
-- Odometer miles:
+- Consumer price index (CPI):
 \
-![](plots/predicted_price_vs_odometer_value.png)
+![](plots/plot_cpi.png)
 \
-From the graph, we see that predicted price decreases steadily with odometer miles. Therefore we suggest preferring used cars with low odometer values.
+We see a clear positive correlation between CPI and customer acquisition likelihood.
 
-- Car type:
+- Customer job type:
 \
-![](plots/predicted_price_vs_car_type.png)
+![](plots/plot_job.png)
 \
-From the graph, we see that pickups, offroad vehicles, and (especially) convertibles get higher prices. Therefore, we suggest focusing on carrying thesee in inventory.
+We see that customer acquisition likelihood is lowered for clients in the service or blue-collar work, and is higher for both retirees and students.
 
-- Car paint color:
+- Customer marital status:
 \
-![](plots/predicted_price_vs_paint_color.png)
+![](plots/plot_marital.png)
 \
-From the graph, we see that black and yellow cars have higher prices, whereas green cars have lower prices, on average. Therefore, we suggest preferring black and yellow cars, and avoiding green cars.
+Clients who are single and never married are slightly more likely to be acquired, while clients who are divorced or widowed have a slightly lower likelihood.
 
-- Car fuel type:
+- Month of contact:
 \
-![](plots/predicted_price_vs_fuel_type.png)
+![](plots/plot_month.png)
 \
-From the graph, we see that diesel cars have higher prices, so we suggest preferring these in inventory.
+Customer acquisition likelihood is slightly lower in the summer season, rises during the fall season, is slightly higher in the winter season, and again lowers during the spring season.
 
 ## Recommendations
 
 Based on the above findings, we propose the following decisions:
-- Avoiding cars from around 1900 and 1990, but preferring cars close to 1940 or close to 2022.
-- Preferring used cars with low odometer values.
-- Focusing on carrying pickups, offroad vehicles, and (especially) convertibles in inventory.
-- Avoiding green cars, and preferring black and yellow cars.
-- Preferring cars of diesel type in inventory.
+- Focusing on marketing to both seniors, and the 18-25 age range.
+- Invest more in marketing during times when the CPI is higher.
+- Focus on marketing to retirees and students, and avoid clients in service or blue-collar work.
+- Target customers who are single and never married, and avoid clients who are divorced or widowed.
+- Focus on the winter season, and invest less in marketing in the summer season.
 
--->
 
 
 
